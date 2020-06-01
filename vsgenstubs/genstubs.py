@@ -72,7 +72,7 @@ def retrieve_func_sigs(core: Union[vapoursynth.Core, vapoursynth.VideoNode], ns:
             signature = '(*args: typing.Any, **kwargs: typing.Any) -> Optional[VideoNode]'
 
         # Clean up the type annotations so that they are valid python syntax.
-        signature = signature.replace("Union", "typing.Union").replace("Sequence", "typing.Sequence")
+        signature = signature.replace("Union", "typing.Union").replace("Sequence", "typing.Sequence").replace("Optional", "typing.Optional")
         signature = signature.replace("vapoursynth.", "")
         signature = signature.replace("VideoNode", '"VideoNode"').replace("VideoFrame", '"VideoFrame"')
         signature = signature.replace("NoneType", "None")
